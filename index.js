@@ -6,7 +6,7 @@ let pass = document.getElementById("pass");
 let user_error = document.querySelector(".user_error");
 let pass_error = document.querySelector(".pass_error");
 let account = document.getElementById("first");
-// let Sign_ip = document.getElementById("Sign");
+let Sign_ip = document.getElementById("Sign");
 let main = document.getElementById("main_page");
 let play_button = document.getElementById("play");
 let pause_btn = document.getElementById("pause");
@@ -109,12 +109,14 @@ function open_music() {
 }
 
 function form () {
-    if (user.value == "") {
+    if (user.value !== "") {
         user_error.style.display = "block";
-    } else if (pass.value == "") {
+    } else if (pass.value !== "") {
         pass_error.style.display = "block";
     } else {
-        open_music()
+        log.addEventListener("click", () => {
+            open_music()
+        })
     }
 };
 
